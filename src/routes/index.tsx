@@ -132,14 +132,12 @@ function useActiveSection() {
 
 function Portfolio() {
   const time = useClock();
-  const active = useActiveSection();
 
   return (
     <div className="grain relative min-h-screen font-sans text-ink">
       <TopBar time={time} />
-      <SideNav active={active} />
 
-      <main className="relative mx-auto max-w-[1400px] px-6 pt-24 sm:px-10 lg:px-16">
+      <main className="relative mx-auto max-w-[1400px] px-5 pt-20 sm:px-8 sm:pt-24 lg:px-16">
         <Hero />
         <Marquee />
         <About />
@@ -159,15 +157,15 @@ function Portfolio() {
 function TopBar({ time }: { time: string }) {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-ink/10 bg-paper/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 font-mono text-[11px] uppercase tracking-[0.18em] sm:px-10 lg:px-16">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="grid h-6 w-6 place-items-center rounded-full bg-ink text-paper">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] sm:px-8 sm:py-4 sm:text-[11px] lg:px-16">
+        <a href="#top" className="flex min-w-0 items-center gap-2">
+          <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-ink text-paper">
             <span className="font-serif text-[13px] italic leading-none">s</span>
           </span>
-          <span className="hidden sm:inline">Somil Raj</span>
-          <span className="hidden text-muted-foreground sm:inline">/ Portfolio ’26</span>
+          <span className="truncate">Somil Raj</span>
+          <span className="hidden truncate text-muted-foreground sm:inline">/ Portfolio ’26</span>
         </a>
-        <div className="flex items-center gap-4 text-muted-foreground">
+        <div className="flex shrink-0 items-center gap-3 text-muted-foreground sm:gap-4">
           <span className="hidden md:inline">Karachi, PK</span>
           <span className="hidden md:inline">·</span>
           <span className="tabular-nums text-ink">
@@ -186,37 +184,6 @@ function TopBar({ time }: { time: string }) {
   );
 }
 
-function SideNav({ active }: { active: string }) {
-  return (
-    <nav
-      aria-label="Section"
-      className="fixed left-6 top-1/2 z-30 hidden -translate-y-1/2 lg:block"
-    >
-      <ul className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-[0.2em]">
-        {NAV.map((n) => {
-          const isActive = active === n.id;
-          return (
-            <li key={n.id}>
-              <a
-                href={`#${n.id}`}
-                className="group flex items-center gap-2 text-muted-foreground transition-colors hover:text-ink"
-              >
-                <span
-                  className={`h-px transition-all duration-500 ${
-                    isActive ? "w-10 bg-copper" : "w-4 bg-ink/30 group-hover:w-8 group-hover:bg-ink"
-                  }`}
-                />
-                <span className={isActive ? "text-ink" : ""}>
-                  {n.num} <span className="ml-1">{n.label}</span>
-                </span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-}
 
 /* ──────────────────────────────── Hero ──────────────────────────────── */
 
