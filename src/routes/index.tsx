@@ -110,25 +110,7 @@ function useClock() {
   return time;
 }
 
-function useActiveSection() {
-  const [active, setActive] = useState<string>("about");
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
-    );
-    NAV.forEach((n) => {
-      const el = document.getElementById(n.id);
-      if (el) obs.observe(el);
-    });
-    return () => obs.disconnect();
-  }, []);
-  return active;
-}
+
 
 function Portfolio() {
   const time = useClock();
