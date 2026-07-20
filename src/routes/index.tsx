@@ -280,13 +280,14 @@ function Marquee() {
         {[...words, ...words].map((w, i) => (
           <span
             key={i}
-            className="mx-6 font-serif text-3xl italic text-ink/80 sm:text-4xl"
+            className="mx-4 font-serif text-2xl italic text-ink/80 sm:mx-6 sm:text-3xl md:text-4xl"
           >
             {w}
-            <span className="mx-6 text-copper">✦</span>
+            <span className="mx-4 text-copper sm:mx-6">✦</span>
           </span>
         ))}
       </div>
+
     </div>
   );
 }
