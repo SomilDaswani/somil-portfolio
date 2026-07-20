@@ -418,18 +418,19 @@ function Work() {
               <span className="font-mono text-xs text-muted-foreground">{p.n}</span>
             </div>
             <div className="col-span-10 md:col-span-6">
-              <div className="flex items-baseline gap-3">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h3
-                  className={`font-serif text-4xl leading-none tracking-[-0.02em] transition-colors sm:text-5xl ${
+                  className={`font-serif text-3xl leading-[1] tracking-[-0.02em] transition-colors sm:text-4xl md:text-5xl ${
                     hovered && hovered !== p.n ? "text-ink/30" : "text-ink"
                   }`}
                 >
                   {p.title}
                 </h3>
-                <span className="font-serif text-2xl italic text-copper-deep">
+                <span className="font-serif text-lg italic text-copper-deep sm:text-2xl">
                   — {p.tagline}
                 </span>
               </div>
+
               <p className="mt-4 max-w-prose text-sm leading-relaxed text-muted-foreground">
                 {p.body}
               </p>
