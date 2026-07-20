@@ -315,9 +315,9 @@ function SectionHeader({ num, kicker, title }: { num: string; kicker: string; ti
 
 function About() {
   return (
-    <section id="about" className="scroll-mt-24 py-28">
+    <section id="about" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="01" kicker="About" title="Notes on the maker." />
-      <div className="grid grid-cols-12 gap-8">
+      <div className="grid grid-cols-12 gap-6 sm:gap-8">
         <div className="col-span-12 md:col-span-7">
           <p className="font-serif text-3xl leading-[1.25] tracking-[-0.01em] sm:text-4xl">
             I’m a full-stack developer who lives at the seam between{" "}
@@ -361,7 +361,7 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-24 py-28">
+    <section id="skills" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="02" kicker="Toolkit" title="Instruments, well-kept." />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {SKILLS.map((s, i) => (
@@ -404,7 +404,7 @@ function Skills() {
 function Work() {
   const [hovered, setHovered] = useState<string | null>(null);
   return (
-    <section id="work" className="scroll-mt-24 py-28">
+    <section id="work" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="03" kicker="Selected work" title="Things I shipped." />
       <ol className="divide-y divide-ink/15 border-y border-ink/15">
         {PROJECTS.map((p) => (
@@ -467,7 +467,7 @@ function Work() {
 function Honors() {
   const ref = useRef<HTMLOListElement>(null);
   return (
-    <section id="honors" className="scroll-mt-24 py-28">
+    <section id="honors" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="04" kicker="Honors & credentials" title="For the record." />
       <ol ref={ref} className="relative border-l border-ink/20 pl-8">
         {HONORS.map((h, i) => (
@@ -501,9 +501,9 @@ function Honors() {
 
 function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 py-28">
+    <section id="contact" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="05" kicker="Contact" title="Say hello, or hire me." />
-      <div className="grid grid-cols-12 gap-8">
+      <div className="grid grid-cols-12 gap-6 sm:gap-8">
         <div className="col-span-12 md:col-span-7">
           <p className="font-serif text-4xl leading-[1.1] tracking-[-0.02em] sm:text-6xl">
             Have a project that needs
