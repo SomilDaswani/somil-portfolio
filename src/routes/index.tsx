@@ -319,7 +319,7 @@ function About() {
       <SectionHeader num="01" kicker="About" title="Notes on the maker." />
       <div className="grid grid-cols-12 gap-6 sm:gap-8">
         <div className="col-span-12 md:col-span-7">
-          <p className="font-serif text-3xl leading-[1.25] tracking-[-0.01em] sm:text-4xl">
+          <p className="font-serif text-2xl leading-[1.25] tracking-[-0.01em] sm:text-3xl md:text-4xl">
             I’m a full-stack developer who lives at the seam between{" "}
             <span className="italic text-copper-deep">product</span> and{" "}
             <span className="italic text-copper-deep">plumbing</span> — writing the
