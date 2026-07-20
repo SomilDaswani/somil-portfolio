@@ -506,7 +506,7 @@ function Contact() {
       <SectionHeader num="05" kicker="Contact" title="Say hello, or hire me." />
       <div className="grid grid-cols-12 gap-6 sm:gap-8">
         <div className="col-span-12 md:col-span-7">
-          <p className="font-serif text-4xl leading-[1.1] tracking-[-0.02em] sm:text-6xl">
+          <p className="font-serif text-3xl leading-[1.1] tracking-[-0.02em] sm:text-5xl md:text-6xl">
             Have a project that needs
             <span className="italic text-copper-deep"> care</span>,
             <br />
