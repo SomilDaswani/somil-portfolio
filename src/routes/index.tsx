@@ -28,9 +28,30 @@ const SKILLS: { group: string; items: string[] }[] = [
 const PROJECTS = [
   {
     n: "01",
+    title: "Assigntist.io",
+    tagline: "Meetings in, Tasks out",
+    year: "2026",
+    body: "Full product for turning meetings into action. A Vexa-powered bot joins your calls live, captures real-time transcripts, and extracts tasks automatically — no manual note-taking. Edit, prioritize, and push tasks straight to Trello via MCP Server, with bulk push, status filtering, and soft delete.",
+    stack: ["React", "JavaScript", "TypeScript", "n8n", "MCP", "RAG", "Vexa", "Trello API", "Tailwind", "Supabase" ],
+    links: [
+      { label: "Live", href: "https://assigntistio.mavikk.com" },
+      { label: "Code", href: "https://github.com/SomilDaswani/Assigntist.io" }
+    ],
+  },
+  {
+    n: "02",
+    title: "HomeMaid",
+    tagline: "Think of Uber, but for maids",
+    year: "2026",
+    body: "AI-powered marketplace connecting homeowners with verified maids. Just type your need or speak with our voice agent — a Gemini-powered agent parses intent, matches you with nearby maids via PostGIS geospatial queries, and broadcasts the job for real-time competitive bidding over Supabase Realtime. Full booking lifecycle from pending to completed.",
+    stack: ["React Native", "Node.js", "Express", "Whisper", "GROQ", "GEMINI", "TypeScript", "Expo", "Tailwind", "Supabase"],
+    links: [{ label: "Code", href: "https://github.com/SomilDaswani/HomeMaid" }],
+  },
+  {
+    n: "03",
     title: "iDesk",
     tagline: "AI Voice IT Helpdesk Agent",
-    year: "2025",
+    year: "2026",
     body: "Voice AI that triages IT issues through natural conversation — categorizes, diagnoses, attempts fixes, and schedules callbacks. Serverless Express backend handles Retell token auth; a post-call n8n pipeline logs tickets to Sheets and confirms via Gmail.",
     stack: ["React 18", "Node/Express", "Retell AI", "GPT-4.1 Nano", "n8n", "Vercel"],
     links: [
@@ -39,7 +60,7 @@ const PROJECTS = [
     ],
   },
   {
-    n: "02",
+    n: "04",
     title: "Marketeer AI",
     tagline: "Meta Ad Campaign Generator",
     year: "2025",
@@ -48,7 +69,7 @@ const PROJECTS = [
     links: [{ label: "Code", href: "https://github.com/SomilDaswani/Marketeer-AI" }],
   },
   {
-    n: "03",
+    n: "05",
     title: "PainPals",
     tagline: "AI Chronic Pain Management",
     year: "2025",
@@ -59,30 +80,16 @@ const PROJECTS = [
       { label: "Code", href: "https://github.com/ShanzayKn/PainPals-GSC" },
     ],
   },
-  {
-    n: "04",
-    title: "TaskFlow",
-    tagline: "Task Management, done right",
-    year: "2024",
-    body: "Full-featured task manager with auth, CRUD, status filtering and realtime updates. Row-level security on Supabase enforces strict per-user data isolation. A study in shipping small, sharp tools with sane defaults.",
-    stack: ["React", "TypeScript", "Tailwind", "Supabase"],
-    links: [
-      { label: "Live", href: "https://assigntistio.mavikk.com" },
-      { label: "Code", href: "https://github.com/SomilDaswani/Assgntist.io" },
-    ],
-  },
-  {
-    n: "05",
-    title: "Assigntist.io",
-    tagline: "Assignment Management Assistant",
-    year: "2025",
-    body: "A student-focused assignment assistant for organizing academic work, tracking deadlines, and keeping coursework moving through a clear, practical workflow.",
-    stack: ["React", "TypeScript", "Tailwind", "Supabase"],
-    links: [{ label: "Code", href: "https://github.com/SomilDaswani/Assigntist.io" }],
-  },
+  
 ];
 
 const HONORS = [
+  {
+    year: "2026",
+    title: "AI Seekho Google Antigravity Hackathon Participant",
+    org: "Google for Developers",
+    note: "Participation across National-level hackathon for AI Seekho initiative.",
+  },
   {
     year: "2025",
     title: "Top 10 — Build with AI Hackathon",
@@ -97,10 +104,10 @@ const HONORS = [
     href: "https://certificate.hack2skill.com/user/apacparticipation/2025H2S03ASC-P00751",
   },
   {
-    year: "2026",
-    title: "BS Computer Science",
+    year: "2022 - 2026",
+    title: "BS, Computer Science",
     org: "DHA Suffa University, Karachi",
-    note: "GPA 3.4 / 4.0 — expected July 2026.",
+    note: "GPA 3.4 / 4.0",
   },
 ];
 
