@@ -412,7 +412,7 @@ function Work() {
             key={p.n}
             onMouseEnter={() => setHovered(p.n)}
             onMouseLeave={() => setHovered(null)}
-            className="group grid grid-cols-12 items-start gap-6 py-10 transition-colors"
+            className="group grid grid-cols-12 items-start gap-4 py-8 transition-colors sm:gap-6 sm:py-10"
           >
             <div className="col-span-2 md:col-span-1">
               <span className="font-mono text-xs text-muted-foreground">{p.n}</span>
