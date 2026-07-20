@@ -13,11 +13,11 @@ const SKILLS: { group: string; items: string[] }[] = [
   },
   {
     group: "Backend",
-    items: ["Node.js", "Express", "Python", "FastAPI", "PostgreSQL", "MongoDB", "MySQL"],
+    items: ["Node.js", "Express", "REST APIs" ,"Python", "FastAPI", "PostgreSQL", "MongoDB", "MySQL"],
   },
   {
     group: "AI & Automation",
-    items: ["LLM Integration", "RAG", "MCP", "Retell AI", "n8n", "Gemini", "GPT-4.1"],
+    items: ["LLM Integration", "RAG", "MCP", "Retell AI", "n8n", "Gemini", "GPT", "Claude", "ElevenLabs"],
   },
   {
     group: "Platform",
@@ -66,7 +66,19 @@ const PROJECTS = [
     year: "2024",
     body: "Full-featured task manager with auth, CRUD, status filtering and realtime updates. Row-level security on Supabase enforces strict per-user data isolation. A study in shipping small, sharp tools with sane defaults.",
     stack: ["React", "TypeScript", "Tailwind", "Supabase"],
-    links: [{ label: "Code", href: "https://github.com/SomilDaswani/TaskFlow" }],
+    links: [
+      { label: "Live", href: "https://assigntistio.mavikk.com" },
+      { label: "Code", href: "https://github.com/SomilDaswani/Assgntist.io" },
+    ],
+  },
+  {
+    n: "05",
+    title: "Assigntist.io",
+    tagline: "Assignment Management Assistant",
+    year: "2025",
+    body: "A student-focused assignment assistant for organizing academic work, tracking deadlines, and keeping coursework moving through a clear, practical workflow.",
+    stack: ["React", "TypeScript", "Tailwind", "Supabase"],
+    links: [{ label: "Code", href: "https://github.com/SomilDaswani/Assigntist.io" }],
   },
 ];
 
