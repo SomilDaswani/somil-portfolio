@@ -520,9 +520,10 @@ function Contact() {
             href="mailto:somilraj34@gmail.com"
             className="mt-8 inline-flex max-w-full items-center gap-3 border border-ink bg-ink px-4 py-3 font-mono text-[10px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-copper-deep hover:border-copper-deep sm:px-6 sm:py-4 sm:text-xs sm:tracking-[0.24em]"
           >
-            somilraj34@gmail.com
-            <span aria-hidden>→</span>
+            <span className="truncate">somilraj34@gmail.com</span>
+            <span aria-hidden className="shrink-0">→</span>
           </a>
+
         </div>
 
         <aside className="col-span-12 md:col-span-4 md:col-start-9">
