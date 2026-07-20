@@ -5,13 +5,6 @@ export const Route = createFileRoute("/")({
   component: Portfolio,
 });
 
-const NAV = [
-  { id: "about", label: "About", num: "01" },
-  { id: "skills", label: "Skills", num: "02" },
-  { id: "work", label: "Work", num: "03" },
-  { id: "honors", label: "Honors", num: "04" },
-  { id: "contact", label: "Contact", num: "05" },
-];
 
 const SKILLS: { group: string; items: string[] }[] = [
   {
@@ -117,36 +110,16 @@ function useClock() {
   return time;
 }
 
-function useActiveSection() {
-  const [active, setActive] = useState<string>("about");
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
-    );
-    NAV.forEach((n) => {
-      const el = document.getElementById(n.id);
-      if (el) obs.observe(el);
-    });
-    return () => obs.disconnect();
-  }, []);
-  return active;
-}
+
 
 function Portfolio() {
   const time = useClock();
-  const active = useActiveSection();
 
   return (
-    <div className="grain relative min-h-screen font-sans text-ink">
+    <div className="grain relative min-h-screen overflow-x-hidden font-sans text-ink">
       <TopBar time={time} />
-      <SideNav active={active} />
 
-      <main className="relative mx-auto max-w-[1400px] px-6 pt-24 sm:px-10 lg:px-16">
+      <main className="relative mx-auto max-w-[1400px] px-5 pt-20 sm:px-8 sm:pt-24 lg:px-16">
         <Hero />
         <Marquee />
         <About />
@@ -166,15 +139,15 @@ function Portfolio() {
 function TopBar({ time }: { time: string }) {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-ink/10 bg-paper/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 font-mono text-[11px] uppercase tracking-[0.18em] sm:px-10 lg:px-16">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="grid h-6 w-6 place-items-center rounded-full bg-ink text-paper">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] sm:px-8 sm:py-4 sm:text-[11px] lg:px-16">
+        <a href="#top" className="flex min-w-0 items-center gap-2">
+          <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-ink text-paper">
             <span className="font-serif text-[13px] italic leading-none">s</span>
           </span>
-          <span className="hidden sm:inline">Somil Raj</span>
-          <span className="hidden text-muted-foreground sm:inline">/ Portfolio ’26</span>
+          <span className="truncate">Somil Raj</span>
+          <span className="hidden truncate text-muted-foreground sm:inline">/ Portfolio ’26</span>
         </a>
-        <div className="flex items-center gap-4 text-muted-foreground">
+        <div className="flex shrink-0 items-center gap-3 text-muted-foreground sm:gap-4">
           <span className="hidden md:inline">Karachi, PK</span>
           <span className="hidden md:inline">·</span>
           <span className="tabular-nums text-ink">
@@ -193,37 +166,6 @@ function TopBar({ time }: { time: string }) {
   );
 }
 
-function SideNav({ active }: { active: string }) {
-  return (
-    <nav
-      aria-label="Section"
-      className="fixed left-6 top-1/2 z-30 hidden -translate-y-1/2 lg:block"
-    >
-      <ul className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-[0.2em]">
-        {NAV.map((n) => {
-          const isActive = active === n.id;
-          return (
-            <li key={n.id}>
-              <a
-                href={`#${n.id}`}
-                className="group flex items-center gap-2 text-muted-foreground transition-colors hover:text-ink"
-              >
-                <span
-                  className={`h-px transition-all duration-500 ${
-                    isActive ? "w-10 bg-copper" : "w-4 bg-ink/30 group-hover:w-8 group-hover:bg-ink"
-                  }`}
-                />
-                <span className={isActive ? "text-ink" : ""}>
-                  {n.num} <span className="ml-1">{n.label}</span>
-                </span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-}
 
 /* ──────────────────────────────── Hero ──────────────────────────────── */
 
@@ -231,23 +173,24 @@ function Hero() {
   return (
     <section id="top" className="relative pt-16 sm:pt-24">
       <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-12 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-          <span>N° 001 — Est. 2026</span>
+        <div className="col-span-12 flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:text-[11px] sm:tracking-[0.24em]">
+          <span className="truncate">N° 001 — Est. 2026</span>
           <span className="hidden sm:inline">Full-Stack · AI · Automations</span>
-          <span>Vol. I</span>
+          <span className="shrink-0">Vol. I</span>
         </div>
 
         <div className="col-span-12 mt-8">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-copper-deep">
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-copper-deep sm:text-xs">
             Software Developer, Karachi
           </p>
-          <h1 className="mt-4 font-serif text-[15vw] leading-[0.86] tracking-[-0.03em] sm:text-[13vw] lg:text-[11.5rem]">
+          <h1 className="mt-4 font-serif text-[22vw] leading-[0.86] tracking-[-0.03em] sm:text-[16vw] lg:text-[11.5rem]">
             Somil
             <br />
             <span className="italic text-copper-deep">Raj</span>
             <span className="text-ink">.</span>
           </h1>
         </div>
+
 
         <div className="col-span-12 mt-10 grid grid-cols-12 gap-6 border-t border-ink/15 pt-8">
           <div className="col-span-12 md:col-span-5">
@@ -337,13 +280,14 @@ function Marquee() {
         {[...words, ...words].map((w, i) => (
           <span
             key={i}
-            className="mx-6 font-serif text-3xl italic text-ink/80 sm:text-4xl"
+            className="mx-4 font-serif text-2xl italic text-ink/80 sm:mx-6 sm:text-3xl md:text-4xl"
           >
             {w}
-            <span className="mx-6 text-copper">✦</span>
+            <span className="mx-4 text-copper sm:mx-6">✦</span>
           </span>
         ))}
       </div>
+
     </div>
   );
 }
@@ -352,29 +296,30 @@ function Marquee() {
 
 function SectionHeader({ num, kicker, title }: { num: string; kicker: string; title: string }) {
   return (
-    <div className="mb-14 flex items-end justify-between gap-8 border-b border-ink/15 pb-6">
-      <div>
+    <div className="mb-10 flex items-end justify-between gap-4 border-b border-ink/15 pb-6 sm:mb-14 sm:gap-8">
+      <div className="min-w-0">
         <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
           § {num} — {kicker}
         </p>
-        <h2 className="mt-3 font-serif text-5xl leading-none tracking-[-0.02em] sm:text-6xl">
+        <h2 className="mt-3 font-serif text-4xl leading-[0.95] tracking-[-0.02em] sm:text-5xl md:text-6xl">
           {title}
         </h2>
       </div>
-      <span className="hidden font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground sm:inline">
+      <span className="hidden shrink-0 font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground sm:inline">
         scroll ↓
       </span>
     </div>
+
   );
 }
 
 function About() {
   return (
-    <section id="about" className="scroll-mt-24 py-28">
+    <section id="about" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="01" kicker="About" title="Notes on the maker." />
-      <div className="grid grid-cols-12 gap-8">
+      <div className="grid grid-cols-12 gap-6 sm:gap-8">
         <div className="col-span-12 md:col-span-7">
-          <p className="font-serif text-3xl leading-[1.25] tracking-[-0.01em] sm:text-4xl">
+          <p className="font-serif text-2xl leading-[1.25] tracking-[-0.01em] sm:text-3xl md:text-4xl">
             I’m a full-stack developer who lives at the seam between{" "}
             <span className="italic text-copper-deep">product</span> and{" "}
             <span className="italic text-copper-deep">plumbing</span> — writing the
@@ -416,13 +361,13 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-24 py-28">
+    <section id="skills" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="02" kicker="Toolkit" title="Instruments, well-kept." />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {SKILLS.map((s, i) => (
           <div
             key={s.group}
-            className="group relative overflow-hidden border border-ink/15 bg-paper-warm/40 p-8 transition-colors hover:bg-paper-warm"
+            className="group relative overflow-hidden border border-ink/15 bg-paper-warm/40 p-6 transition-colors hover:bg-paper-warm sm:p-8"
           >
             <div className="flex items-start justify-between">
               <div>
@@ -459,7 +404,7 @@ function Skills() {
 function Work() {
   const [hovered, setHovered] = useState<string | null>(null);
   return (
-    <section id="work" className="scroll-mt-24 py-28">
+    <section id="work" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="03" kicker="Selected work" title="Things I shipped." />
       <ol className="divide-y divide-ink/15 border-y border-ink/15">
         {PROJECTS.map((p) => (
@@ -467,24 +412,25 @@ function Work() {
             key={p.n}
             onMouseEnter={() => setHovered(p.n)}
             onMouseLeave={() => setHovered(null)}
-            className="group grid grid-cols-12 items-start gap-6 py-10 transition-colors"
+            className="group grid grid-cols-12 items-start gap-4 py-8 transition-colors sm:gap-6 sm:py-10"
           >
             <div className="col-span-2 md:col-span-1">
               <span className="font-mono text-xs text-muted-foreground">{p.n}</span>
             </div>
             <div className="col-span-10 md:col-span-6">
-              <div className="flex items-baseline gap-3">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h3
-                  className={`font-serif text-4xl leading-none tracking-[-0.02em] transition-colors sm:text-5xl ${
+                  className={`font-serif text-3xl leading-[1] tracking-[-0.02em] transition-colors sm:text-4xl md:text-5xl ${
                     hovered && hovered !== p.n ? "text-ink/30" : "text-ink"
                   }`}
                 >
                   {p.title}
                 </h3>
-                <span className="font-serif text-2xl italic text-copper-deep">
+                <span className="font-serif text-lg italic text-copper-deep sm:text-2xl">
                   — {p.tagline}
                 </span>
               </div>
+
               <p className="mt-4 max-w-prose text-sm leading-relaxed text-muted-foreground">
                 {p.body}
               </p>
@@ -522,7 +468,7 @@ function Work() {
 function Honors() {
   const ref = useRef<HTMLOListElement>(null);
   return (
-    <section id="honors" className="scroll-mt-24 py-28">
+    <section id="honors" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="04" kicker="Honors & credentials" title="For the record." />
       <ol ref={ref} className="relative border-l border-ink/20 pl-8">
         {HONORS.map((h, i) => (
@@ -556,11 +502,11 @@ function Honors() {
 
 function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 py-28">
+    <section id="contact" className="scroll-mt-20 py-16 sm:py-24 md:py-28">
       <SectionHeader num="05" kicker="Contact" title="Say hello, or hire me." />
-      <div className="grid grid-cols-12 gap-8">
+      <div className="grid grid-cols-12 gap-6 sm:gap-8">
         <div className="col-span-12 md:col-span-7">
-          <p className="font-serif text-4xl leading-[1.1] tracking-[-0.02em] sm:text-6xl">
+          <p className="font-serif text-3xl leading-[1.1] tracking-[-0.02em] sm:text-5xl md:text-6xl">
             Have a project that needs
             <span className="italic text-copper-deep"> care</span>,
             <br />
@@ -572,11 +518,12 @@ function Contact() {
           </p>
           <a
             href="mailto:somilraj34@gmail.com"
-            className="mt-10 inline-flex items-center gap-3 border border-ink bg-ink px-6 py-4 font-mono text-xs uppercase tracking-[0.24em] text-paper transition-colors hover:bg-copper-deep hover:border-copper-deep"
+            className="mt-8 inline-flex max-w-full items-center gap-3 border border-ink bg-ink px-4 py-3 font-mono text-[10px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-copper-deep hover:border-copper-deep sm:px-6 sm:py-4 sm:text-xs sm:tracking-[0.24em]"
           >
-            somilraj34@gmail.com
-            <span aria-hidden>→</span>
+            <span className="truncate">somilraj34@gmail.com</span>
+            <span aria-hidden className="shrink-0">→</span>
           </a>
+
         </div>
 
         <aside className="col-span-12 md:col-span-4 md:col-start-9">
@@ -615,11 +562,12 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="relative mt-20 border-t border-ink/20 bg-ink text-paper">
-      <div className="mx-auto max-w-[1400px] px-6 pt-16 pb-8 sm:px-10 lg:px-16">
-        <p className="font-serif text-[18vw] leading-[0.82] tracking-[-0.03em] sm:text-[14vw] lg:text-[13rem]">
+    <footer className="relative mt-16 border-t border-ink/20 bg-ink text-paper sm:mt-20">
+      <div className="mx-auto max-w-[1400px] px-5 pt-12 pb-8 sm:px-8 sm:pt-16 lg:px-16">
+        <p className="font-serif text-[22vw] leading-[0.82] tracking-[-0.03em] sm:text-[16vw] lg:text-[13rem]">
           Let’s build.
         </p>
+
         <div className="mt-10 grid grid-cols-12 gap-6 border-t border-paper/20 pt-8 font-mono text-[11px] uppercase tracking-[0.2em]">
           <div className="col-span-12 md:col-span-4">
             <p className="text-paper/50">© 2026 Somil Raj</p>
