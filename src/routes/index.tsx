@@ -518,7 +518,7 @@ function Contact() {
           </p>
           <a
             href="mailto:somilraj34@gmail.com"
-            className="mt-10 inline-flex items-center gap-3 border border-ink bg-ink px-6 py-4 font-mono text-xs uppercase tracking-[0.24em] text-paper transition-colors hover:bg-copper-deep hover:border-copper-deep"
+            className="mt-8 inline-flex max-w-full items-center gap-3 border border-ink bg-ink px-4 py-3 font-mono text-[10px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-copper-deep hover:border-copper-deep sm:px-6 sm:py-4 sm:text-xs sm:tracking-[0.24em]"
           >
             somilraj34@gmail.com
             <span aria-hidden>→</span>
