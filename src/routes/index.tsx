@@ -367,7 +367,7 @@ function Skills() {
         {SKILLS.map((s, i) => (
           <div
             key={s.group}
-            className="group relative overflow-hidden border border-ink/15 bg-paper-warm/40 p-8 transition-colors hover:bg-paper-warm"
+            className="group relative overflow-hidden border border-ink/15 bg-paper-warm/40 p-6 transition-colors hover:bg-paper-warm sm:p-8"
           >
             <div className="flex items-start justify-between">
               <div>
