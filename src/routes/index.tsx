@@ -85,6 +85,18 @@ const PROJECTS = [
 
 const HONORS = [
   {
+    year: "2022 - 2026",
+    title: "BS, Computer Science",
+    org: "DHA Suffa University, Karachi",
+    note: "GPA 3.4 / 4.0",
+  },
+  {
+    year: "2024 - 2026",
+    title: "Marketing Lead",
+    org: "Google Developers Groups on Campus, DHA Suffa University",
+    note: "Created and executed marketing campaigns for GDGoC DSU, including social media, email, and event promotions.",
+  },
+  {
     year: "2026",
     title: "AI Seekho Google Antigravity Hackathon Participant",
     org: "Google for Developers",
@@ -103,12 +115,7 @@ const HONORS = [
     note: "Regional participation across Asia-Pacific.",
     href: "https://certificate.hack2skill.com/user/apacparticipation/2025H2S03ASC-P00751",
   },
-  {
-    year: "2022 - 2026",
-    title: "BS, Computer Science",
-    org: "DHA Suffa University, Karachi",
-    note: "GPA 3.4 / 4.0",
-  },
+  
 ];
 
 function useClock() {
