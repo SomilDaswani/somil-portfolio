@@ -562,11 +562,12 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="relative mt-20 border-t border-ink/20 bg-ink text-paper">
-      <div className="mx-auto max-w-[1400px] px-6 pt-16 pb-8 sm:px-10 lg:px-16">
-        <p className="font-serif text-[18vw] leading-[0.82] tracking-[-0.03em] sm:text-[14vw] lg:text-[13rem]">
+    <footer className="relative mt-16 border-t border-ink/20 bg-ink text-paper sm:mt-20">
+      <div className="mx-auto max-w-[1400px] px-5 pt-12 pb-8 sm:px-8 sm:pt-16 lg:px-16">
+        <p className="font-serif text-[22vw] leading-[0.82] tracking-[-0.03em] sm:text-[16vw] lg:text-[13rem]">
           Let’s build.
         </p>
+
         <div className="mt-10 grid grid-cols-12 gap-6 border-t border-paper/20 pt-8 font-mono text-[11px] uppercase tracking-[0.2em]">
           <div className="col-span-12 md:col-span-4">
             <p className="text-paper/50">© 2026 Somil Raj</p>
