@@ -116,7 +116,7 @@ function Portfolio() {
   const time = useClock();
 
   return (
-    <div className="grain relative min-h-screen font-sans text-ink">
+    <div className="grain relative min-h-screen overflow-x-hidden font-sans text-ink">
       <TopBar time={time} />
 
       <main className="relative mx-auto max-w-[1400px] px-5 pt-20 sm:px-8 sm:pt-24 lg:px-16">
