@@ -173,23 +173,24 @@ function Hero() {
   return (
     <section id="top" className="relative pt-16 sm:pt-24">
       <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-12 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-          <span>N° 001 — Est. 2026</span>
+        <div className="col-span-12 flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:text-[11px] sm:tracking-[0.24em]">
+          <span className="truncate">N° 001 — Est. 2026</span>
           <span className="hidden sm:inline">Full-Stack · AI · Automations</span>
-          <span>Vol. I</span>
+          <span className="shrink-0">Vol. I</span>
         </div>
 
         <div className="col-span-12 mt-8">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-copper-deep">
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-copper-deep sm:text-xs">
             Software Developer, Karachi
           </p>
-          <h1 className="mt-4 font-serif text-[15vw] leading-[0.86] tracking-[-0.03em] sm:text-[13vw] lg:text-[11.5rem]">
+          <h1 className="mt-4 font-serif text-[22vw] leading-[0.86] tracking-[-0.03em] sm:text-[16vw] lg:text-[11.5rem]">
             Somil
             <br />
             <span className="italic text-copper-deep">Raj</span>
             <span className="text-ink">.</span>
           </h1>
         </div>
+
 
         <div className="col-span-12 mt-10 grid grid-cols-12 gap-6 border-t border-ink/15 pt-8">
           <div className="col-span-12 md:col-span-5">
