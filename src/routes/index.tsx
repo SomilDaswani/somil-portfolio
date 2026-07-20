@@ -296,19 +296,20 @@ function Marquee() {
 
 function SectionHeader({ num, kicker, title }: { num: string; kicker: string; title: string }) {
   return (
-    <div className="mb-14 flex items-end justify-between gap-8 border-b border-ink/15 pb-6">
-      <div>
+    <div className="mb-10 flex items-end justify-between gap-4 border-b border-ink/15 pb-6 sm:mb-14 sm:gap-8">
+      <div className="min-w-0">
         <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
           § {num} — {kicker}
         </p>
-        <h2 className="mt-3 font-serif text-5xl leading-none tracking-[-0.02em] sm:text-6xl">
+        <h2 className="mt-3 font-serif text-4xl leading-[0.95] tracking-[-0.02em] sm:text-5xl md:text-6xl">
           {title}
         </h2>
       </div>
-      <span className="hidden font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground sm:inline">
+      <span className="hidden shrink-0 font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground sm:inline">
         scroll ↓
       </span>
     </div>
+
   );
 }
 
