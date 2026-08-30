@@ -73,14 +73,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Somil Raj — Full-Stack Developer & AI Builder" },
+      { title: "Somil Raj — Full-Stack Developer" },
       {
         name: "description",
         content:
-          "Portfolio of Somil Raj — full-stack developer building AI agents, automations, and production web apps from Karachi.",
+          "Portfolio of Somil Raj — full-stack developer building AI agents, automations, and production web apps",
       },
       { name: "author", content: "Somil Raj" },
-      { property: "og:title", content: "Somil Raj — Full-Stack Developer & AI Builder" },
+      { property: "og:title", content: "Somil Raj — Full-Stack Developer" },
       {
         property: "og:description",
         content:

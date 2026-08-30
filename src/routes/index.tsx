@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -174,11 +175,20 @@ function TopBar({ time }: { time: string }) {
           <span className="hidden truncate text-muted-foreground sm:inline">/ Portfolio ’26</span>
         </a>
         <div className="flex shrink-0 items-center gap-3 text-muted-foreground sm:gap-4">
-          <span className="hidden md:inline">Karachi, PK</span>
-          <span className="hidden md:inline">·</span>
+          <a
+            href="/Somil_Raj_CV.pdf"
+            download="Somil_Raj_CV.pdf"
+            className="inline-flex shrink-0 items-center gap-2  px-3 py-2 text-ink transition-colors hover:border-copper-deep hover:bg-copper-deep hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper-deep"
+            aria-label="Download Somil Raj CV"
+          >
+            <Download className="h-3 w-3" aria-hidden="true" />
+            <span>Download CV</span>
+          </a>
+          {/* <span className="hidden md:inline">Karachi, PK</span>
+          <span className="hidden md:inline">.</span>
           <span className="tabular-nums text-ink">
             {time || "—"} <span className="text-muted-foreground">PKT</span>
-          </span>
+          </span> */}
           <span className="hidden items-center gap-1.5 md:inline-flex">
             <span className="relative inline-flex h-1.5 w-1.5">
               <span className="absolute inset-0 animate-ping rounded-full bg-moss/60" />
@@ -224,7 +234,7 @@ function Hero() {
               A short manifesto
             </p>
             <p className="mt-3 font-serif text-2xl leading-snug sm:text-3xl">
-              I build <em className="text-copper-deep">quietly ambitious</em> software —
+              I build <em className="text-copper-deep">quietly ambitious</em> software.
               AI agents, automations, and web apps that behave like they were made by
               someone who cares.
             </p>
@@ -235,8 +245,8 @@ function Hero() {
               Currently
             </p>
             <ul className="mt-3 space-y-1 text-sm">
-              <li>Shipping iDesk v2</li>
-              <li>Reading about MCP servers</li>
+              <li>Shipping voice assistants</li>
+              <li>Falling down a random rabbit hole</li>
               <li>Open to grad roles ’26</li>
             </ul>
           </div>
@@ -296,6 +306,9 @@ function Marquee() {
     "Full-Stack",
     "Gemini",
     "Edge Functions",
+    "ElevenLabs",
+    "Claude",
+    "Git",
   ];
   return (
     <div
@@ -348,7 +361,7 @@ function About() {
           <p className="font-serif text-2xl leading-[1.25] tracking-[-0.01em] sm:text-3xl md:text-4xl">
             I’m a full-stack developer who lives at the seam between{" "}
             <span className="italic text-copper-deep">product</span> and{" "}
-            <span className="italic text-copper-deep">plumbing</span> — writing the
+            <span className="italic text-copper-deep">plumbing.</span>  Writing the
             frontend, the backend, and the small, obsessive glue that makes them feel
             like one thing.
           </p>
@@ -368,7 +381,7 @@ function About() {
               ["Role", "Full-Stack Dev"],
               ["Focus", "AI · Automations"],
               ["Education", "DSU · CS ’26"],
-              ["Stack", "TS / Py / SQL"],
+              ["Stack", "JS / Py / SQL"],
               ["Status", "Available"],
             ].map(([k, v]) => (
               <div key={k} className="flex items-center justify-between py-3">
@@ -615,7 +628,7 @@ function Footer() {
           </div>
           <div className="col-span-6 md:col-span-4 md:text-right">
             <p className="text-paper/50">Set in</p>
-            <p className="mt-1">Instrument Serif · Work Sans · JetBrains Mono</p>
+            <p className="mt-1">Instrument Serif · Work Sans · JB Mono</p>
           </div>
         </div>
       </div>
