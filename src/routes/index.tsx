@@ -89,7 +89,7 @@ const HONORS = [
     year: "2022 - 2026",
     title: "BS, Computer Science",
     org: "DHA Suffa University, Karachi",
-    note: "GPA 3.4 / 4.0",
+    note: "CGPA: 3.43 / 4.0",
   },
   {
     year: "2024 - 2026",
@@ -99,21 +99,27 @@ const HONORS = [
   },
   {
     year: "2026",
+    title: "Winner - CWA Ship Hackathon 2026",
+    org: "CodeWithAhsan",
+    note: "Won the hackathon with the project Sudhaar-Ai.",
+  },
+  {
+    year: "2026",
     title: "AI Seekho Google Antigravity Hackathon Participant",
     org: "Google for Developers",
-    note: "Participation across National-level hackathon for AI Seekho initiative.",
+    note: "Participation across National-level hackathon for AI Seekho initiative, and built HomeMaid.",
   },
   {
     year: "2025",
     title: "Top 10 — Build with AI Hackathon",
     org: "GDG Kolachi",
-    note: "Recognized for Marketeer AI among dozens of teams.",
+    note: "Recognized for Marketeer AI among 30+ teams.",
   },
   {
     year: "2025",
-    title: "APAC Solution Challenge Participant",
+    title: "Google Solution Challenge Participant",
     org: "Google Developer Groups",
-    note: "Regional participation across Asia-Pacific.",
+    note: "Regional participation across Asia-Pacific, and worked on PainPals project.",
     href: "https://certificate.hack2skill.com/user/apacparticipation/2025H2S03ASC-P00751",
   },
   
