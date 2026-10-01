@@ -183,7 +183,7 @@ function TopBar({ time }: { time: string }) {
         <div className="flex shrink-0 items-center gap-3 text-muted-foreground sm:gap-4">
           <a
             href="/Somil_Raj_CV.pdf"
-            download="Somil_Raj_CV.pdf"
+            download="Somil_Raj_CV"
             className="inline-flex shrink-0 items-center gap-2  px-3 py-2 text-ink transition-colors hover:border-copper-deep hover:bg-copper-deep hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper-deep"
             aria-label="Download Somil Raj CV"
           >
